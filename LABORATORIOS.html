@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos de Laboratorio Unificados</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+    </style>
+    <script>
+        // Configuración de colores
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'micro-main': '#1E4620',
+                        'micro-accent': '#38761D',
+                    },
+                },
+            }
+        };
+
+        // Lógica para cambiar entre pestañas
+        function showLab(labNumber) {
+            // 1. Ocultar todos los contenidos
+            document.getElementById('lab-content-1').style.display = 'none';
+            document.getElementById('lab-content-2').style.display = 'none';
+            document.getElementById('lab-content-3').style.display = 'none';
+            
+            // 2. Resetear estilo de botones
+            document.getElementById('btn-lab-1').classList.remove('bg-micro-accent', 'text-white');
+            document.getElementById('btn-lab-2').classList.remove('bg-micro-accent', 'text-white');
+            document.getElementById('btn-lab-3').classList.remove('bg-micro-accent', 'text-white');
+
+            // 3. Mostrar el seleccionado
+            document.getElementById('lab-content-' + labNumber).style.display = 'block';
+            document.getElementById('btn-lab-' + labNumber).classList.add('bg-micro-accent', 'text-white');
+        }
+
+        // Iniciar mostrando el Laboratorio 1
+        window.onload = function() {
+            showLab(1);
+        };
+    </script>
+</head>
+<body class="min-h-screen">
+
+    <!-- Menú de Navegación Superior -->
+    <nav class="bg-white shadow-lg p-4 sticky top-0 z-10">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center max-w-7xl">
+            <h2 class="text-2xl font-bold text-micro-main mb-3 sm:mb-0">Fundamentos de Microbiología</h2>
+            <div class="flex space-x-2 sm:space-x-4">
+                <button id="btn-lab-1" onclick="showLab(1)" class="px-4 py-2 rounded-lg font-semibold transition duration-150 ease-in-out border border-micro-main text-micro-main hover:bg-micro-main hover:text-white">
+                    Laboratorio 1
+                </button>
+                <button id="btn-lab-2" onclick="showLab(2)" class="px-4 py-2 rounded-lg font-semibold transition duration-150 ease-in-out border border-micro-main text-micro-main hover:bg-micro-main hover:text-white">
+                    Laboratorio 2
+                </button>
+                <button id="btn-lab-3" onclick="showLab(3)" class="px-4 py-2 rounded-lg font-semibold transition duration-150 ease-in-out border border-micro-main text-micro-main hover:bg-micro-main hover:text-white">
+                    Laboratorio 3
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-8">
+
+        <!-- CONTENEDOR VACÍO PARA LABORATORIO 1 -->
+        <div id="lab-content-1" class="hidden">
+            <!-- PEGA AQUÍ TU CÓDIGO DEL LABORATORIO 1 <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Nº1 - Fundamentos de Microbiología</title>
+    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Usando la fuente Inter para un look limpio y moderno */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Gris muy claro, casi blanco azulado (del Lab 2) */
+        }
+        /* Estilo para los iconos de objetivo y materiales */
+        .objective-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            min-width: 1.2rem; /* Asegura el espaciado para todos los íconos */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        /* Paleta de colores del Lab 2 (Verde oscuro, verde acento y oro) */
+                        'micro-main': '#1E4620',      /* Verde Oscuro (Primary/Titles) */
+                        'micro-accent': '#38761D',    /* Verde más claro (Accent) */
+                        'micro-text': '#333333',      /* Gris Oscuro para texto */
+                        'micro-background': '#F0FFF0', /* Fondo suave verde muy pálido */
+                        'micro-red': '#dc2626', /* Rojo se mantiene para advertencias o contraste específico */
+                        'yogurt-color': '#D4AC0D',     /* Oro Profundo (Usado para realzar el Yogur/Bacilos) */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 sm:p-8 lg:p-12">
+    <!-- Contenedor Principal Centrado -->
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-6 sm:p-10 lg:p-12 border border-gray-100">
+        <!-- TÍTULO PRINCIPAL DEL LABORATORIO --><header class="text-center mb-10 pb-4 border-b-4 border-micro-main/50">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-micro-main tracking-tight">
+                Laboratorio Nº1 de Fundamentos de Microbiología
+            </h1>
+        </header>
+        <!-- TÍTULO DE LA PRÁCTICA --><h2 class="text-3xl sm:text-4xl font-bold text-black-500 text-center mb-10">
+            Observación de Bacterias
+        </h2>
+        <!-- SECCIÓN DE LA ACTIVIDAD: Tinción Simple --><section class="mb-10">
+            
+            <div id="tincion-simple" class="bg-micro-background p-6 rounded-2xl shadow-xl border border-micro-main/30">
+                <h3 class="text-2xl sm:text-3xl font-bold text-micro-main mb-6 border-b-4 border-micro-main/50 pb-3">
+                    Tinción Simple
+                </h3>
+                <!-- Contenedor para el contenido de la Tinción Simple --><div class="space-y-8 text-micro-main">
+                    
+                    <!-- Sub-sección: Introducción (ACTUALIZADA CON TEXTO DEL USUARIO) --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-1 mb-2">Introducción</h4>
+                        <p class="text-micro-text mb-3">
+                            Las bacterias son microorganismos que, debido a su reducido tamaño y la falta de pigmentación natural, son transparentes al microscopio óptico estándar. Por esta razón, la microbiología depende de técnicas de contraste como la tinción para hacer visibles estas estructuras celulares. El presente trabajo se enmarca en la necesidad de dominar las técnicas básicas de visualización celular.
+                        </p>
+                        <p class="text-micro-text mb-3">
+                            La Tinción Simple es una técnica fundamental que emplea un único colorante básico (generalmente con carga positiva, como el Azul de Metileno) para reaccionar con los componentes cargados negativamente de la célula bacteriana, como la pared celular y el citoplasma. El objetivo de este procedimiento es aumentar el contraste para poder determinar la morfología (forma: cocos, bacilos, espirilos) y la agrupación de las bacterias.
+                        </p>
+                        <p class="text-micro-text">
+                            La investigación se ha puesto en marcha para aplicar estos fundamentos teóricos a la práctica, utilizando muestras de la vida cotidiana (yogur, sarro dental y vinagre de manzana) que albergan poblaciones microbianas diversas. La información previa indica que estas muestras contendrán bacterias lácticas, flora mixta oral y bacterias acéticas, respectivamente, permitiendo un estudio comparativo de las distintas morfologías y sus patrones de crecimiento.
+                        </p>
+                    </div>
+                    <!-- Sub-sección: Objetivos --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-1 mb-2">Objetivos</h4>
+                        <ul class="space-y-3 text-micro-text list-none mt-3">
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent"> 🔬 </span>
+                                <p>Realizar una tinción simple de bacterias procedentes de distintas muestras naturales.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent"> 🔥 </span>
+                                <p>Realizar dos tipos de fijaciones bacterianas y saber en qué casos se recomienda una u otra.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent"> 🦠 </span>
+                                <p>Observar la morfología bacteriana y aprender a distinguir los distintos tipos de agrupaciones que existen.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent"> 🔭 </span>
+                                <p>Practicar con el microscopio al máximo aumento y con el correcto empleo del aceite de inmersión.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Sub-sección: Materiales (LISTA ACTUALIZADA Y CON ICONOS) --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-1 mb-2">Materiales</h4>
+                        <ul class="space-y-2 text-micro-text list-none mt-3">
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-red"> 🔥 </span>
+                                <p>Mechero de Alcohol</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-red"> 🔥 </span>
+                                <p>Fósforos o Encendedor</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent"> 🧫 </span>
+                                <p>Asa Bacteriológica</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-gray-500"> 🪵 </span>
+                                <p>Pinza de Madera</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-yogurt-color"> 🖼 </span>
+                                <p>Portaobjetos</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main"> 🔬 </span>
+                                <p>Microscopio</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-gray-500"> 🧪 </span>
+                                <p>Soporte de Tinción</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent"> 🦠 </span>
+                                <p>Muestras Bacterianas de Origen Natural: Yogur, Sarro Dental y Vinagre de Manzana</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main"> 💧 </span>
+                                <p>Colorante para Tinción: Azul de Metileno al 1%</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-gray-800"> ⚫ </span>
+                                <p>Aceite de Inmersión</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-blue-400"> 💉 </span>
+                                <p>Goteros</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Sub-sección: Metodología (Antes Procedimiento) --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        
+                        <!-- TÍTULO DE METODOLOGÍA ACTUALIZADO CON EL MISMO FORMATO QUE RESULTADOS -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Metodología</h4>
+                        
+                        <div class="mt-3 space-y-4">
+                            <h5 class="text-lg font-semibold text-micro-main">a. Bacterias del Yogur</h5>
+                            <div class="space-y-3 pl-4">
+                                
+                                <!-- Paso 1: Esterilización del asa --><p class="text-micro-text">Se esterilizó el asa bacteriológica por incineración al colocarla en la llama del mechero de alcohol hasta que se puso al rojo vivo y, posteriormente, se dejó enfriar brevemente antes de tomar la muestra de yogur.</p>
+                                
+                               <figure class="my-4 text-center">
+    <video src="1-1 video.mov" 
+           alt="Video 1: Asa bacteriológica siendo esterilizada a la llama del mechero de alcohol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 1: Asa bacteriológica siendo esterilizada a la llama del mechero de alcohol.
+    </figcaption>
+</figure>
+                                
+                                <!-- Paso 2: Preparación del frotis (con agua) --><p class="text-micro-text">Se depositó una pequeña gota de agua destilada sobre un portaobjeto. A continuación, se tomó una mínima porción de yogur con el asa bacteriológica, que ya estaba esterilizada. Esta porción de yogur se mezcló con la gota de agua y se extendió sobre la superficie del portaobjeto para crear una capa fina y uniforme.</p>
+                                <figure class="my-4 text-center">
+    <img src="1-1.jpg" 
+           alt="Figura 1: Preparación del frotis con el asa bacteriológica."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 1: Preparación del frotis con el asa bacteriológica.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 3: Preparación de la segunda muestra (con extensor) --><p class="text-micro-text">Adicionalmente, se preparó otra muestra utilizando un segundo portaobjeto como herramienta de extensión.</p>
+                                <figure class="my-4 text-center">
+    <img src="2-1.jpg" 
+           alt="Figura 2: Preparación del frotis o fijación de la muestra con el portaobjetos."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 2: Preparación del frotis o fijación de la muestra con el portaobjetos.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 4: Fijación por Calor --><p class="text-micro-text">Se procedió a la fijación de las muestras al calor pasando el portaobjeto rápidamente por la llama del mechero (sin exponer la muestra directamente a la llama), con la única finalidad de secar completamente y fijar las bacterias a la superficie del portaobjetos.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="3-1.jpg" 
+           alt="Figura 3: Fijación de la muestra al calor."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 3: Fijación de la muestra al calor.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 5: Tinción con Azul de Metileno --><p class="text-micro-text">Los portaobjetos se apoyaron sobre el soporte de tinciones. Se añadieron unas gotas de azul de metileno hasta cubrir completamente el frotis y se dejó actuar durante 4 a 5 minutos para que el colorante penetrara en las células bacterianas.</p>
+                                <figure class="my-4 text-center">
+    <img src="4-1.jpg" 
+           alt="Figura 4: Aplicación de colorante azul de metileno."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 4: Aplicación de colorante azul de metileno.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 6: Primer Lavado --><p class="text-micro-text">Una vez transcurrido el tiempo de tinción, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="5-1.jpg" 
+           alt="Figura 5: Lavado del portaobjetos para eliminar el exceso de colorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 5: Lavado del portaobjetos para eliminar el exceso de colorante.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 7: Desengrasado, Segundo Lavado y Secado Final --><p class="text-micro-text">Se agregó alcohol a la muestra, dejándolo actuar aproximadamente 2 minutos con el propósito de desengrasar el frotis. Posteriormente, la muestra se lavó nuevamente con agua destilada para asegurar la retirada completa del alcohol. Finalmente, la muestra se secó con el calor del mechero, pasándola rápidamente a través de la llama, para dejarla lista para la observación microscópica.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="6-1.jpg" 
+           alt="Figura 6: Alcohol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 6: Alcohol.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 8: Observación (Combinado) -->
+                                <p class="text-micro-text">Se realizó la observación inicial utilizando el objetivo de 10x y posteriormente el de 40x para localizar la muestra y enfocarla. Para la observación de máximo detalle, se giró el revóolver, se depositó una pequeña gota de aceite de inmersión directamente sobre el frotis, y se procedió a observar con el objetivo de 100x.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="7-1.jpg" 
+           alt="Figura 7: Uso del microscopio óptico con aceite de inmersión para la observación a 100x."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 7: Uso del microscopio óptico con aceite de inmersión para la observación a 100x.
+    </figcaption>
+</figure>
+
+                                
+                            </div>
+                            
+                            <!-- SECCIÓN: BACTERIAS DEL SARRO DENTAL -->
+                            <h5 class="text-lg font-semibold text-micro-main">b. Bacterias del Sarro Dental</h5>
+                            <div class="space-y-3 pl-4">
+                                
+                                <!-- Paso Sarro 1: Toma y Extensión de Muestra --><p class="text-micro-text">Se utilizó un hisopo estéril que fue humedecido ligeramente con agua destilada. Este hisopo se pasó suavemente por la encía de un compañero voluntario para recolectar la flora bacteriana. El hisopo con la muestra recolectada se puso en contacto con el portaobjeto. Y luego se depositó una pequeña gota de agua destilada sobre el portaobjeto. A continuación, con el asa bacteriológica (previamente esterilizada), se comenzó a mezclar la muestra con la gota de agua y se extendió sobre la superficie del portaobjeto.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="8-1.jpg" 
+           alt="Figura 8: Preparación del frotis con el asa bacteriológica."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 8: Preparación del frotis con el asa bacteriológica.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Sarro 2: Fijación por Calor --><p class="text-micro-text">Posteriormente, se procedió a la fijación de la muestra al calor pasando el portaobjeto rápidamente por la llama del mechero (sin exponer la muestra directamente a la llama), con la única finalidad de secar completamente y fijar las bacterias a la superficie del portaobjetos.</p>
+                                <figure class="my-4 text-center">
+    <img src="9-1.jpg" 
+           alt="Figura 9: Fijación de la muestra al calor."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 9: Fijación de la muestra al calor.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Sarro 3: Tinción con Azul de Metileno --><p class="text-micro-text">El portaobjeto se apoyó sobre el soporte de tinciones. Se añadieron unas gotas de azul de metileno hasta cubrir completamente el frotis y se dejó actuar durante 4 a 5 minutos para que el colorante penetrara en las células bacterianas.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="10-1.jpg" 
+           alt="Figura 10: Aplicación de colorante azul de metileno."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 10: Aplicación de colorante azul de metileno.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Sarro 4: Primer Lavado --><p class="text-micro-text">Una vez transcurrido el tiempo de tinción, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante.</p>
+                                <figure class="my-4 text-center">
+    <img src="11-1.jpg" 
+           alt="Figura 11: Agua destilada."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 11: Agua destilada.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Sarro 5: Secado Final (Modificado) --><p class="text-micro-text">Finalmente, la muestra se secó con el calor del mechero, pasándola rápidamente a través de la llama, para dejarla lista para la observación microscópica.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="12-1.jpg" 
+           alt="Figura 12: Secado final de la muestra para la observación microscópica."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 12: Secado final de la muestra para la observación microscópica.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso 6: Observación (Combinado) -->
+                                <p class="text-micro-text mt-6">Se realizó la observación inicial utilizando el objetivo de 10x y posteriormente el de 40x para localizar la muestra y enfocarla. Para la observación de máximo detalle, se giró el revóolver, se depositó una pequeña gota de aceite de inmersión directamente sobre el frotis, y se procedió a observar con el objetivo de 100x.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="13-1.jpg" 
+           alt="Figura 13: Uso del microscopio óptico con aceite de inmersión para la observación a 100x."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 13: Uso del microscopio óptico con aceite de inmersión para la observación a 100x.
+    </figcaption>
+</figure>
+
+                                
+                            </div>
+                            <!-- TERCERA SECCIÓN: BACTERIAS DEL VINAGRE DE MANZANA (ACTUALIZADA) -->
+                            <h5 class="text-lg font-semibold text-micro-main">c. Bacterias del Vinagre de Manzana</h5>
+                            <div class="space-space-y-3 pl-4">
+                                
+                                <!-- Paso Vinagre 1: Toma, Extensión y Fijación --><p class="text-micro-text">Se tomó con el asa bacteriológica una pequeña porción de vinagre de manzana. Esta muestra se colocó sobre un portaobjeto. Inmediatamente, se depositó una gota de agua destilada junto a la muestra. La muestra recolectada se extendió sobre el portaobjetos, mezclándose con la gota de agua. Finalmente, se procedió a la fijación de la muestra al calor pasando el portaobjeto rápidamente por la llama del mechero, con la finalidad de secar completamente y adherir las bacterias a la superficie del vidrio.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="14-1.jpg" 
+           alt="Figura 14: Fijación de la muestra al calor."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 14: Fijación de la muestra al calor.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Vinagre 2: Tinción con Azul de Metileno (ACTUALIZADO CON NUEVA IMAGEN) --><p class="text-micro-text">El portaobjeto se apoyó sobre el soporte de tinciones. Se añadieron unas gotas de azul de metileno hasta cubrir completamente el frotis y se dejó actuar durante 4 a 5 minutos para que el colorante penetrara en las células bacterianas.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="15-1.jpg" 
+           alt="Figura 15: Colorante azul de metileno."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 15: Colorante azul de metileno.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Vinagre 3: Lavado y Secado --><p class="text-micro-text">Una vez transcurrido el tiempo de tinción, se procedió a lavar cuidadosamente el portaobjeto con agua destilada para arrastrar el exceso de colorante. Finalmente, la muestra se secó rápidamente con el calor del mechero.</p>
+                                <figure class="my-4 text-center">
+    <img src="16-1.jpg" 
+           alt="Figura 16: Secado final de la muestra para la observación microscópica."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 16: Secado final de la muestra para la observación microscópica.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Paso Vinagre 4: Observación (Combinado) -->
+                                <p class="text-micro-text mt-6">Se realizó la observación inicial utilizando el objetivo de 10x y posteriormente el de 40x para localizar la muestra y enfocarla. Para la observación de máximo detalle, se giró el revóolver, se depositó una pequeña gota de aceite de inmersión directamente sobre el frotis, y se procedió a observar con el objetivo de 100x.</p>
+                                
+                                <figure class="my-4 text-center">
+    <img src="17-1.jpg" 
+           alt="Figura 17: Uso del microscopio óptico con aceite de inmersión para la observación a 100x."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+    </img>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 17: Uso del microscopio óptico con aceite de inmersión para la observación a 100x.
+    </figcaption>
+</figure>
+
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Sub-sección: RESULTADOS --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-xl mt-8">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Resultados</h4>
+                        
+                        <p class="text-micro-text mb-6">A continuación, se resumen los hallazgos microscópicos obtenidos tras la tinción simple con Azul de Metileno de cada una de las muestras.</p>
+                        
+                        <!-- TABLA DE RESULTADOS EN TARJETAS PARA MEJOR RESPONSIVIDAD -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            
+                            <!-- Tarjeta 1: Yogur (USANDO ORO DE ACCENTO) -->
+                            <div class="p-4 rounded-lg bg-gray-50/50 border-t-4 border-micro-main shadow-md">
+                                <h5 class="font-bold text-lg text-micro-main mb-2 flex items-center">
+                                    <span class="objective-icon text-micro-main"> 🥛 </span> Bacterias del Yogur
+                                </h5>
+                                
+                                <p class="text-sm text-gray-600 font-semibold mt-3">Morfologías Predominante:</p>
+                                <ul class="list-disc list-inside text-base text-micro-text space-y-1 pl-2">
+                                    <li>
+                                        <strong>Cocos (Esferas):</strong> Estas son las bacterias redondeadas. Corresponden al <i>Streptococcus thermophilus</i>. En la imagen se aprecian algunas estructuras pequeñas, puntuales y de forma esférica.
+                                    </li>
+                                    <li>
+                                        <strong>Bacilos (Bastones):</strong> Estas son las bacterias con forma de bastón o cilindro. Corresponden al <i>Lactobacillus bulgaricus</i>. En el fondo de la imagen, entre las áreas de color, se pueden intuir algunas formas más grandes y alargadas, que coinciden con la descripción del lactobacilo.
+                                    </li>
+                                </ul>
+                            
+                                <p class="text-sm text-gray-600 font-semibold mt-3">Agrupaciones:</p>
+                                <ul class="list-disc list-inside text-base text-micro-text space-y-1 pl-2">
+                                    <li>
+                                        <strong>Estreptococos (Cocos en cadena):</strong> Es la agrupación típica del <i>Streptococcus thermophilus</i>. El término "estreptococos" significa que los cocos se agrupan en cadenas. La bacteria crece así después de la división celular.
+                                    </li>
+                                    <li>
+                                        <strong>Bacilos aislados o en cadenas cortas:</strong> El <i>Lactobacillus bulgaricus</i> tiende a aparecer como bacilos individuales o formando cadenas cortas.
+                                    </li>
+                                </ul>
+                                <figure class="mt-4 text-center">
+                                    <img src="18-1.jpg" alt="Micrografía de bacterias de yogur teñidas con azul de metileno."
+                                    class="w-full h-auto rounded-lg shadow-lg border border-gray-200">
+                                    <figcaption class="mt-2 text-xs text-gray-500 italic">Muestra de yogur con el asa bacteriológica en 100x.</figcaption>
+                                </figure>
+                                
+                            </div>
+                            <!-- Tarjeta 2: Sarro Dental (USANDO TEAL DEL GRAM NEGATIVE) -->
+                            <div class="p-4 rounded-lg bg-gray-50/50 border-t-4 border-micro-main shadow-md">
+                                <h5 class="font-bold text-lg text-micro-main mb-2 flex items-center">
+                                    <span class="objective-icon text-micro-main"> 🦷 </span> Bacterias del Sarro Dental
+                                </h5>
+                                
+                                <p class="text-sm text-gray-600 font-semibold mt-3">Morfología Predominante:</p>
+                                <ul class="list-disc list-inside text-base text-micro-text space-y-1 pl-2">
+                                    <li>
+                                        <strong>Células Epiteliales:</strong> Aunque no son bacterias, son la estructura más dominante. Son células planas, grandes e irregulares de color azul claro, con un núcleo discernible. Indican la procedencia de la muestra bucal.
+                                    </li>
+                                    <li>
+                                        <strong>Cocobacilos/Bacilos pequeños:</strong> Hay muchas estructuras puntuales y muy pequeñas, algunas con una forma ligeramente alargada (bastones muy pequeños o cocobacilos), esparcidas por todo el campo, especialmente en las áreas claras. Estos serían los bacilos y cocobacilos.
+                                    </li>
+                                    <li>
+                                        <strong>Diplococos:</strong> También se pueden intuir algunos puntos muy pequeños que aparecen emparejados (diplococos).
+                                    </li>
+                                </ul>
+                                
+                                <p class="text-sm text-gray-600 font-semibold mt-3">Agrupaciones:</p>
+                                <ul class="list-disc list-inside text-base text-micro-text space-y-1 pl-2">
+                                    <li>
+                                        <strong>Aisladas y Dispersas:</strong> Muchas de las formas bacterianas (cocos y bacilos) se ven individuales y muy dispersas alrededor del material de fondo.
+                                    </li>
+                                    <li>
+                                        <strong>Asociaciones Cortas:</strong> Es posible intuir algunos diplococos (cocos en parejas) y cadenas cortas de bacilos o cocos.
+                                    </li>
+                                </ul>
+                                <figure class="mt-4 text-center">
+                                    <img src="19-1.jpg" alt="Micrografía de células epiteliales y bacterias de sarro dental teñidas con azul de metileno."
+                                    class="w-full h-auto rounded-lg shadow-lg border border-gray-200">
+                                    <figcaption class="mt-2 text-xs text-gray-500 italic">Muestra de sarro dental en 100x.</figcaption>
+                                </figure>
+                                
+                            </div>
+                            <!-- Tarjeta 3: Vinagre de Manzana (USANDO VERDE OSCURO MAIN) -->
+                            <div class="p-4 rounded-lg bg-gray-50/50 border-t-4 border-micro-main shadow-md">
+                                <h5 class="font-bold text-lg text-micro-main mb-2 flex items-center">
+                                    <span class="objective-icon text-micro-main"> 🍎 </span> Bacterias del Vinagre
+                                </h5>
+                                
+                                <p class="text-sm text-gray-600 font-semibold mt-3">Morfología Predominante:</p>
+                                <ul class="list-disc list-inside text-base text-micro-text space-y-1 pl-2">
+                                    <li>
+                                        <strong>Bacilos (Bastones):</strong> La estructura principal que domina en la banda central se compone de innumerables formas alargadas. Estos son los bacilos rectos, probablemente la bacteria <i>Acetobacter</i>.
+                                    </li>
+                                </ul>
+                                
+                                <p class="text-sm text-gray-600 font-semibold mt-3">Agrupaciones:</p>
+                                <ul class="list-disc list-inside text-base text-micro-text space-y-1 pl-2">
+                                    <li>
+                                        <strong>Agrupaciones en Cadena/Filamento:</strong> Dentro de esa banda central, se observan los bacilos tan densamente empaquetados y entrelazados que parecen formar cadenas, filamentos o estructuras ramificadas. Esta alta organización es consistente con la producción de la "madre del vinagre".
+                                    </li>
+                                </ul>
+                                <figure class="mt-4 text-center">
+                                    <img src="20-1.jpg" alt="Micrografía de bacterias del vinagre de manzana teñidas con azul de metileno."
+                                    class="w-full h-auto rounded-lg shadow-lg border border-gray-200">
+                                    <figcaption class="mt-2 text-xs text-gray-500 italic">Muestra de vinagre de manzana en 100x.</figcaption>
+                                </figure>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NUEVA SECCIÓN: ANÁLISIS Y DISCUSIÓN (ACTUALIZADA CON LA NUEVA INFORMACIÓN) --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-xl mt-8">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Análisis y Discusión</h4>
+                        
+                        <div class="space-y-6 text-micro-text">
+                            
+                            <!-- Análisis de Bacterias del Yogur -->
+                            <div>
+                                <h5 class="text-lg font-semibold text-micro-main mb-2">Bacterias del Yogur:</h5>
+                                <p>La identificación simultánea de la morfología Cocos en cadenas (Estreptococos) y Bacilos aislados/cortos es la evidencia directa de una fermentación láctica dual y simbiótica.</p>
+                                <p>La presencia de estas dos morfologías y agrupaciones confirma la acción de las cepas iniciadoras:</p>
+                                <ul class="list-disc list-inside pl-4 mt-2 space-y-1">
+                                    <li>La morfología de Bacilo corresponde al <i>Lactobacillus bulgaricus</i>, el principal responsable de la alta acidez del yogur.</li>
+                                    <li>La morfología de Estreptococo corresponde al <i>Streptococcus thermophilus</i>, que contribuye inicialmente a la acidez y es crucial para el perfil aromático.</li>
+                                </ul>
+                                <p class="mt-2 text-micro-text">El resultado demuestra la efectividad del inóculo industrial, donde cada especie prospera en el medio para generar las características fisicoquímicas del producto final.</p>
+                            </div>
+                            
+                            <!-- Análisis de Bacterias del Sarro Dental -->
+                            <div>
+                                <h5 class="text-lg font-semibold text-micro-main mb-2">Bacterias del Sarro Dental:</h5>
+                                <p>La muestra revela una alta heterogeneidad de morfologías (Cocos y Bacilos/Cocobacilos) dispersas en una matriz, lo cual es altamente significativo.</p>
+                                <p>Esta variedad no se debe a un inóculo único, sino que es el reflejo de la flora polimicrobiana y saprófita de la cavidad bucal. Las diferentes morfologías confirman la presencia de varios géneros bacterianos que coexisten.</p>
+                                <p>La dispersión y el anclaje de estas bacterias en la muestra y la ausencia de grandes agrupaciones ordenadas confirma la estructura de una biopelícula (placa dental). El sarro es una capa densa donde las bacterias se adhieren a una matriz extracelular (glicocálix) de restos proteicos, lo que dificulta su eliminación mecánica. [attachment_0](attachment) </p>
+                            </div>
+                            
+                            <!-- Análisis de Bacterias del Vinagre -->
+                            <div>
+                                <h5 class="text-lg font-semibold text-micro-main mb-2">Bacterias del Vinagre:</h5>
+                                <p>La observación de la morfología Bacilar organizada en una película densa y filamentosa es la interpretación clave del proceso de acetificación.</p>
+                                <p>La forma de Bacilo identifica al género <i>Acetobacter</i> o <i>Gluconobacter</i>, las bacterias aeróbicas responsables de oxidar el etanol a ácido acético.</p>
+                                <p class="mt-2">La formación de una estructura gruesa y continua (el "velo" o "madre del vinagre") no es una simple agrupación al azar, sino una adaptación ecológica esencial. Al ser organismos aerobios obligados, las bacterias se organizan en la interfase aire-líquido para maximizar su acceso al oxígeno, lo que impulsa eficientemente la reacción de producción de vinagre.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- SECCIÓN DE CONCLUSIONES (USANDO ACCENTO VERDE) --><div class="bg-white p-4 rounded-lg border border-gray-200 shadow-xl mt-8">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Conclusiones</h4>
+                        <ul class="space-y-4 text-micro-text list-disc pl-5">
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+
+                               El objetivo principal de realizar la tinción simple de bacterias se cumplió con éxito en las tres muestras. La técnica de Tinción y Visualización permitió contrastar eficazmente las células, que de otra forma serían invisibles, y obtener micrografías de alta calidad que confirman la presencia microbiana.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+
+                            
+                                En cuanto a la Fijación, se implementó y evaluó la técnica por calor para las tres muestras. Se concluye que esta fijación es rápida y efectiva para adherir bacterias al portaobjetos, un paso indispensable para evitar el arrastre celular durante el proceso de tinción y lavado.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+
+                            
+                                Respecto a la Morfología y Agrupación, se logró el objetivo de observar y distinguir estos patrones bacterianos. Se identificaron claramente cocos y bacilos, tanto en formas aisladas como en patrones específicos (estreptococos en yogur, bacilos filamentosos en vinagre y flora mixta en sarro), lo cual está directamente correlacionado con el tipo de ecosistema microbiano de cada muestra.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+
+                            
+                                Finalmente, en relación con el Dominio Microscópico, se practicó satisfactoriamente el uso del microscopio al máximo aumento, lo que incluye el correcto empleo del aceite de inmersión.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pie de página --><footer class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500">
+            Documento de Laboratorio creado para Fundamentos de Microbiología.
+        </footer>
+    </div>
+</body>
+</html> -->
+            <!-- Nota: Pega solo el contenido dentro del <body> de tu archivo original para evitar duplicar etiquetas html/head -->
+            
+        </div>
+
+        <!-- CONTENEDOR VACÍO PARA LABORATORIO 2 -->
+        <div id="lab-content-2" class="hidden">
+             <!-- PEGA AQUÍ TU CÓDIGO DEL LABORATORIO 2 <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 2: Análisis de Microbiología</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Usando la fuente Inter para un look limpio y moderno */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Gris muy claro, casi blanco azulado */
+        }
+        /* Estilos específicos para la diferenciación en el análisis */
+        .gram-positive {
+            border-left: 4px solid #D4AC0D; /* ORO PROFUNDO (Reemplazo Gram+ del violeta) */
+            background-color: #fafafa;
+        }
+        .gram-negative {
+            border-left: 4px solid #008080; /* TEAL PROFUNDO (Reemplazo Gram- del rojo) */
+            background-color: #fafafa;
+        }
+        /* Estilo para los iconos de objetivo y materiales (manteniéndolo si la estructura del original lo usa) */
+        .objective-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            min-width: 1.2rem;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'micro-main': '#1E4620',      /* Verde Oscuro (Primary/Titles) */
+                        'micro-accent': '#38761D',    /* Verde más claro (Accent) */
+                        'micro-text': '#333333',      /* Gris Oscuro para texto */
+                        'micro-background': '#F0FFF0', /* Fondo suave verde muy pálido */
+                        'gram-pos-inst': '#D4AC0D',    /* Verde Oscuro (Scientific Gram+) */
+                        'gram-neg-inst': '#008080',    /* Verde Oscuro (Scientific Gram-) */
+                        'yogurt-color': '#D4AC0D',     /* blanco para Yogurt */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 sm:p-8 lg:p-12">
+
+    <!-- Contenedor Principal Centrado -->
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl p-6 sm:p-10 lg:p-12 border border-gray-200">
+
+        <!-- TÍTULO PRINCIPAL DEL LABORATORIO -->
+        <header class="text-center mb-10 pb-4 border-b-4 border-micro-main/50">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-micro-main tracking-tight">
+                Laboratorio Nº2 de Fundamentos de Microbiología
+            </h1>
+        </header>
+
+        <!-- TÍTULO DE LA PRÁCTICA -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-black-500 text-center mb-10">
+            Observación de Bacterias
+        </h2>
+
+        <!-- SECCIÓN DE LA ACTIVIDAD: Tinción de Gram -->
+        <section class="mb-10">
+            <div id="tincion-gram" class="bg-micro-background p-6 rounded-xl shadow-inner border border-micro-main/30">
+                <h3 class="text-2xl sm:text-3xl font-bold text-micro-main mb-6 border-b-4 border-micro-main/50 pb-3">
+                    Tinción de Gram
+                </h3>
+
+                <!-- Contenedor para el contenido de la Tinción de Gram -->
+                <div class="space-y-8 text-micro-text">
+                    
+                    <!-- Sub-sección: Introducción -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-md">
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Introducción</h4>
+                        
+                        <!-- Contenido para la Introducción: Texto del usuario - MANTENIDO -->
+                        <p class="mb-4 text-micro-text leading-relaxed">
+                            El presente trabajo se fundamenta en la Tinción de Gram, una técnica de coloración diferencial indispensable y la más utilizada en el campo de la microbiología para la clasificación preliminar de las bacterias. La motivación principal de esta investigación radica en la necesidad de aplicar esta metodología fundamental para diferenciar y clasificar morfológicamente las poblaciones microbianas presentes en diversas muestras de origen biológico y alimentario.
+                        </p>
+                        <p class="mb-4 text-micro-text leading-relaxed">
+                            El objetivo central de este laboratorio fue aplicar rigurosamente el protocolo de Tinción de Gram para distinguir dos grandes grupos bacterianos los Gram positivos y los Gram negativos y correlacionar la respuesta a la tinción con la morfología celular observada.
+                        </p>
+                        <p class="mb-4 text-micro-text leading-relaxed">
+                            El fundamento de la técnica se basa en las diferencias químicas y estructurales inherentes a la pared celular bacteriana. Las bacterias Gram positivas poseen una pared gruesa de peptidoglicano que retiene fuertemente el complejo de cristal violeta y Lugol (mordiente), permaneciendo teñidas de color violeta incluso después del paso de decoloración con alcohol-acetona. Por el contrario, las bacterias Gram negativas tienen una pared de peptidoglicano mucho más fina y una membrana externa, lo que permite que el decolorante arrastre el complejo cristal violeta, quedando incoloras para luego tomar el color del contracolorante, la Safranina, tiñéndose de rosado o rojo.
+                            
+                        </p>
+                        <p class="mb-4 text-micro-text leading-relaxed">
+                            Para este estudio, se seleccionaron tres muestras que representan ecosistemas microbianos comunes y relevantes:
+                        </p>
+                        <!-- Lista con emojis (MANTENIDA) -->
+                        <ul class="list-none space-y-2 ml-4 text-micro-text">
+                            <li class="flex items-start">
+                                <span class="mr-2 text-xl">🥛</span>Yogur: Muestra rica en bacterias lácticas (típicamente Lactobacillus y Streptococcus), que son conocidas por ser primariamente Gram positivas.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-xl">🦷</span>Sarro Dental: Un biofilm polimicrobiano altamente complejo de la cavidad oral, conocido por albergar una densa mezcla de cocos y bacilos Gram positivos y Gram negativos.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-xl">🍇</span>Uva Fermentada: Un sistema dinámico donde coexisten bacterias y levaduras, siendo un excelente modelo para observar la interacción de flora Gram positiva (bacterias lácticas), Gram negativa y células eucariotas (levaduras).
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Sub-sección: Objetivos (MANTENIDO) -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-md">
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-1 mb-2">Objetivos</h4>
+                        <ul class="space-y-3 text-micro-text list-none mt-3">
+                            <li class="flex items-start">
+                                <!-- Icono: Dark Green -->
+                                <span class="objective-icon text-micro-main">🔬</span>
+                                <p>Aplicar una técnica de coloración diferencial para la identificación de bacterias Gram-positivas y Gram-negativas.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <!-- Icono: Dark Green -->
+                                <span class="objective-icon text-micro-main">🧬</span>
+                                <p>Reconocer los distintos modelos de pared bacteriana y su impacto en la reacción de tinción.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Sub-sección: Materiales (MANTENIDO) -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-md">
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Materiales</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-micro-text list-none mt-3">
+                            <!-- Icono: Gram Negative (Teal) - Usando para un elemento de peligro (Mechero) -->
+                            <li class="flex items-start"><span class="objective-icon text-gram-neg-inst">🔥</span><p>Mechero de Alcohol</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-amber-500">🔥</span><p>Fósforos o Encendedor</p></li>
+                            <!-- Icono: Deep Gold Accent -->
+                            <li class="flex items-start"><span class="objective-icon text-micro-accent">🧫</span><p>Asa Bacteriológica</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-gray-600">🪵</span><p>Pinza de Madera</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-gray-400">🥼</span><p>Portaobjetos</p></li>
+                            <!-- Icono: Dark Green Main -->
+                            <li class="flex items-start"><span class="objective-icon text-micro-main">🔬</span><p>Microscopio</p></li>
+                            <!-- Icono: Deep Gold Accent -->
+                            <li class="flex items-start"><span class="objective-icon text-micro-accent">🧪</span><p>Soporte de Tinción</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-blue-400">💧</span><p>Agua Destilada</p></li>
+                            <!-- Icono: Gram Positive (Deep Gold) -->
+                            <li class="flex items-start"><span class="objective-icon text-gram-pos-inst">💜</span><p>Cristal Violeta</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-amber-600">🟡</span><p>Lugol</p></li>
+                            <!-- Icono: Gram Positive (Deep Gold) -->
+                            <li class="flex items-start"><span class="objective-icon text-gram-pos-inst">🧴</span><p>Alcohol-Acetona</p></li>
+                            <!-- Icono: Gram Negative (Deep Teal) -->
+                            <li class="flex items-start"><span class="objective-icon text-gram-neg-inst">🟥</span><p>Safranina</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-gray-800">💧</span><p>Aceite de Inmersión</p></li>
+                            <!-- Icono: Deep Gold Accent -->
+                            <li class="flex items-start"><span class="objective-icon text-micro-accent">🦠</span><p>Muestras Bacterianas (Yogur, Sarro Dental, Uva Fermentada)</p></li>
+                            <li class="flex items-start"><span class="objective-icon text-blue-400">💉</span><p>Goteros</p></li>
+                        </ul>
+                    </div>
+
+                    <!-- Sub-sección: Metodología (MANTENIDO) -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-md">
+                        
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Metodología</h4>
+                        
+                        <div class="mt-3 space-y-6 text-micro-text">
+
+                            <!-- Subtítulo de Muestra A -->
+                            <h5 class="text-lg font-bold text-micro-main mb-3">a. Bacterias del Yogur </h5>
+                            
+                            <!-- Pasos del Yogur (MANTENIDO) - Border: Deep Gold Accent -->
+                            <div class="space-y-4 border-l-4 border-micro-main pl-4">
+                                
+                                <!-- Preparación: Esterilización -->
+                                <p>Se esterilizó el asa bacteriológica por incineración al colocarla en la llama del mechero de alcohol hasta que se puso al rojo vivo y, posteriormente, se dejó enfriar brevemente antes de tomar la muestra de yogur.</p>
+                                <figure class="my-4 text-center">
+    <video src="1-2 video.mov" 
+           alt="Video 1: Esterilización del asa bacteriológica por incineración."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 1: Esterilización del asa bacteriológica por incineración.
+    </figcaption>
+</figure>
+
+   
+                                <!-- Preparación: Frotis -->
+                                <p>Se depositó una pequeña gota de agua destilada sobre un portaobjeto. A continuación, se tomó una mínima porción de yogur con el asa bacteriológica, que ya estaba esterilizada. Esta porción de yogur se mezcló con la gota de agua y se extendió sobre la superficie del portaobjeto para crear una capa fina y uniforme.</p>
+                               <figure class="my-4 text-center">
+    <video src="2-2 video.mp4" 
+           alt="Video 2: Preparación del frotis mezclando la muestra con agua y extendiéndola."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 2: Preparación del frotis mezclando la muestra con agua y extendiéndola.
+    </figcaption>
+</figure>
+
+                                
+                                <!-- Preparación: Fijación al calor -->
+                                <p>Se procedió a la fijación de las muestras al calor pasando el portaobjeto rápidamente por la llama del mechero (sin exponer la muestra directamente a la llama), con la única finalidad de secar completamente y fijar las bacterias a la superficie del portaobjetos.</p>
+                                <figure class="my-4 text-center">
+    <video src="3-2 video.mov" 
+           alt="Video 3: Fijación del frotis al calor usando el mechero de alcohol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 3: Fijación del frotis al calor usando el mechero de alcohol.
+    </figcaption>
+</figure>
+
+                                <!-- Tinción: Cristal Violeta -->
+                                <p class="pt-4 mt-4">
+                                    El portaobjetos se colocó sobre el soporte de tinciones y, acto seguido, se añadieron unas gotas de Cristal Violeta (el colorante primario) dejándolo actuar durante un minuto para la tinción.</p>
+                                <figure class="my-4 text-center">
+    <video src="4-2 video.mov" 
+           alt="Video 4: Aplicación del Cristal Violeta sobre el frotis fijado en el soporte de tinciones."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 4: Aplicación del Cristal Violeta sobre el frotis fijado en el soporte de tinciones.
+    </figcaption>
+</figure>
+
+                                <!-- Tinción: Lavado con agua (Post-Cristal Violeta) -->
+                                <p>Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante.</p>
+                                <figure class="my-4 text-center">
+    <video src="5-2 video.mp4" 
+           alt="Video 5: Lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de colorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 5: Lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de colorante.
+    </figcaption>
+</figure>
+                                
+                                <!-- Tinción: Lugol (Mordiente) -->
+                                <p>
+                                    Posteriormente, se aplicaron unas gotas de Lugol sobre la preparación, dejándolo actuar durante un minuto.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="6-2 video.mov" 
+           alt="Video 6: Aplicación del Lugol sobre el portaobjetos."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 6: Aplicación del Lugol sobre el portaobjetos.
+    </figcaption>
+</figure>
+
+                                <!-- Tinción: Lavado con agua (Post-Lugol) -->
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de Lugol.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="7-2 video.mov" 
+           alt="Video 7: Segundo lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de Lugol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 7: Segundo lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de Lugol.
+    </figcaption>
+</figure>
+
+                                <!-- Tinción: Decoloración (Alcohol-Acetona) -->
+                                <p>
+                                    Seguidamente, se procedió a la decoloración utilizando Alcohol-Acetona, se dejó actuar cuidadosamente durante 15 segundos.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="8-2 video.mov" 
+           alt="Video 8: Aplicación de Alcohol-Acetona, el paso de decoloración."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 8: Aplicación de Alcohol-Acetona, el paso de decoloración.
+    </figcaption>
+</figure>
+                                
+                                <!-- Tinción: Lavado con agua (Post-Alcohol/Acetona) -->
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y asegurar la retirada completa del alcohol.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="9-2 video.mov" 
+           alt="Video 9: Tercer lavado con agua destilada para detener la acción del decolorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200" style="width: 10cm; height: 10cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 9: Tercer lavado con agua destilada para detener la acción del decolorante.
+    </figcaption>
+</figure>
+
+
+                                <!-- Tinción: Contratinción (Safranina) -->
+                                <p>
+                                    Finalmente, para realizar la contratinción, se añadieron unas gotas de Safranina (el colorante secundario) sobre la preparación, dejándolo actuar durante un minuto.
+                                </p>
+<figure class="my-4 text-center">
+    <video src="10-2 video.mov" 
+           alt="Video 10: Aplicación de Safranina para la contratinción (colorante secundario)."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video"
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 10: Aplicación de Safranina para la contratinción (colorante secundario).
+    </figcaption>
+</figure>
+
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante. La muestra se secó con el calor del mechero, pasándola rápidamente a través de la llama, para dejarla lista para la observación microscópica.
+                                </p>
+<figure class="my-4 text-center">
+    <video src="11-2 video.mov" 
+           alt="Video 11: Cuarto y último lavado con agua destilada para retirar el exceso de Safranina."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 11: Cuarto y último lavado con agua destilada para retirar el exceso de Safranina.
+    </figcaption>
+</figure>
+                                
+                            </div>
+                            
+                            <h5 class="text-lg font-bold text-micro-main mb-3 pt-6 border-t border-gray-400 mt-6">b. Bacterias del Sarro Dental</h5>
+                            
+                            <div class="space-y-4 border-l-4 border-micro-main pl-4">
+                                <p>Primero, se depositó una pequeña gota de agua destilada sobre el portaobjetos. Luego, se utilizó un hisopo estéril, humedecido ligeramente, que se pasó suavemente por la encía de un compañero voluntario para recolectar la flora bacteriana. Acto seguido, el hisopo con la muestra recolectada se puso en contacto con la gota de agua sobre el portaobjetos. A continuación, utilizando el asa bacteriológica (previamente esterilizada), se procedió a mezclar y extender la muestra de manera uniforme sobre la superficie. Posteriormente, se procedió a la fijación de la muestra al calor pasando el portaobjeto rápidamente por la llama del mechero (sin exponer la muestra directamente a la llama), con la única finalidad de secar completamente y fijar las bacterias a la superficie del portaobjetos.</p>             
+                                <figure class="my-4 text-center">
+    <video src="12-2 video.mov" 
+           alt="Video 12: Fijación del frotis al calor usando el mechero de alcohol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 12: Fijación del frotis al calor usando el mechero de alcohol.
+    </figcaption>
+</figure>
+
+                                <p class="pt-4 mt-4">
+                                    El portaobjetos se colocó sobre el soporte de tinciones y, acto seguido, se añadieron unas gotas de Cristal Violeta (el colorante primario) dejándolo actuar durante un minuto para la tinción.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="13-2 video.mov" 
+           alt="Video 13: Aplicación del Cristal Violeta sobre el frotis fijado en el soporte de tinciones."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 13: Aplicación del Cristal Violeta sobre el frotis fijado en el soporte de tinciones. 
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="14-2 video.mp4" 
+           alt="Video 14: Lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de colorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 14: Lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de colorante.
+    </figcaption>
+</figure>
+                                
+                                <p>
+                                    Posteriormente, se aplicaron unas gotas de Lugol sobre la preparación, dejándolo actuar durante un minuto.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="15-2 video.mov" 
+           alt="Video 15: Aplicación del Lugol sobre el portaobjetos."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 15: Aplicación del Lugol sobre el portaobjetos.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de Lugol.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="16-2 video.mov" 
+           alt="Video 16: Segundo lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de Lugol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 16: Segundo lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de Lugol.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Seguidamente, se procedió a la decoloración utilizando Alcohol-Acetona, se dejó actuar cuidadosamente durante 15 segundos.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="17-2 video.mov" 
+           alt="Video 17: Aplicación de Alcohol-Acetona, el paso de decoloración."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 17: Aplicación de Alcohol-Acetona, el paso de decoloración.
+    </figcaption>
+</figure>
+                                
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y asegurar la retirada completa del alcohol.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="18-2 video.mov" 
+           alt="Video 18: Tercer lavado con agua destilada para detener la acción del decolorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 18: Tercer lavado con agua destilada para detener la acción del decolorante.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Finalmente, para realizar la contratinción, se añadieron unas gotas de Safranina (el colorante secundario) sobre la preparación, dejándolo actuar durante un minuto.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="19-2 video.mov" 
+           alt="Video 19: Aplicación de Safranina para la contratinción (colorante secundario)."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 19: Aplicación de Safranina para la contratinción (colorante secundario).
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="20-2 video.mov" 
+           alt="Video 20: Cuarto y último lavado con agua destilada para retirar el exceso de Safranina."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 20: Cuarto y último lavado con agua destilada para retirar el exceso de Safranina.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    La muestra se secó con el calor del mechero, pasándola rápidamente a través de la llama, para dejarla lista para la observación microscópica.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="21-2 video.mov" 
+           alt="Video 21: Secado de la muestra con el calor del mechero para eliminar el agua residual antes de la observación."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 21: Secado de la muestra con el calor del mechero para eliminar el agua residual antes de la observación.
+    </figcaption>
+</figure>
+                            </div>
+
+                            <h5 class="text-lg font-bold text-micro-main mb-3 pt-6 border-t border-gray-400 mt-6">c. Bacterias de la Uva Fermentada</h5>
+                            
+                            <div class="space-y-4 border-l-4 border-micro-main pl-4">
+                                <p>Primero, se depositó una pequeña gota de agua destilada sobre el portaobjetos. Luego, se tomó una pequeña cantidad de la uva fermentada y se puso en contacto con la gota de agua. A continuación, utilizando el asa bacteriológica (previamente esterilizada), se procedió a mezclar y extender la muestra de manera uniforme sobre la superficie, creando un frotis fino. Posteriormente, se procedió a la fijación de la muestra al calor pasando el portaobjeto rápidamente por la llama del mechero (sin exponer la muestra directamente a la llama), con la única finalidad de secar completamente y fijar las bacterias a la superficie del portaobjetos.</p>
+                                <figure class="my-4 text-center">
+    <video src="22-2 video.mov" 
+           alt="Video 22: Fijación del frotis al calor usando el mechero de alcohol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 22: Fijación del frotis al calor usando el mechero de alcohol..
+    </figcaption>
+</figure>
+                           
+                                <p class="pt-4 mt-4">
+                                    El portaobjetos se colocó sobre el soporte de tinciones y, acto seguido, se añadieron unas gotas de Cristal Violeta (el colorante primario) dejándolo actuar durante un minuto para la tinción.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="23-2 video.mov" 
+           alt="Video 23: Aplicación del Cristal Violeta sobre el frotis fijado en el soporte de tinciones."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 23: Aplicación del Cristal Violeta sobre el frotis fijado en el soporte de tinciones.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="24-2 video.mov" 
+           alt="Video 24: Lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de colorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 24: Lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de colorante.
+    </figcaption>
+</figure>
+                                
+                                <p>
+                                    Posteriormente, se aplicaron unas gotas de Lugol sobre la preparación, dejándolo actuar durante un minuto.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="25-2 video.mov" 
+           alt="Video 25: Aplicación del Lugol sobre el portaobjetos."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 25: Aplicación del Lugol sobre el portaobjetos.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de Lugol.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="26-2 video.mov" 
+           alt="Video 26: Segundo lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de Lugol."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 26: Segundo lavado cuidadoso del portaobjeto con agua destilada para retirar el exceso de Lugol.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Seguidamente, se procedió a la decoloración utilizando Alcohol-Acetona, se dejó actuar cuidadosamente durante 15 segundos.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="27-2 video.mov" 
+           alt="Video 27: Aplicación de Alcohol-Acetona, el paso de decoloración."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 27: Aplicación de Alcohol-Acetona, el paso de decoloración.
+    </figcaption>
+</figure>
+                                
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y asegurar la retirada completa del alcohol.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="28-2 video.mov" 
+           alt="Video 28: Tercer lavado con agua destilada para detener la acción del decolorante."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 28: Tercer lavado con agua destilada para detener la acción del decolorante.
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Finalmente, para realizar la contratinción, se añadieron unas gotas de Safranina (el colorante secundario) sobre la preparación, dejándolo actuar durante un minuto.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="29-2 video.mov" 
+           alt="Video 29: Aplicación de Safranina para la contratinción (colorante secundario)."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 29: Aplicación de Safranina para la contratinción (colorante secundario).
+    </figcaption>
+</figure>
+
+                                <p>
+                                    Una vez transcurrido el tiempo, se tomó la botella de agua destilada y se procedió a lavar cuidadosamente el portaobjeto. Para ello, se inclinó ligeramente el portaobjeto y se comenzó a verter agua sobre la muestra, permitiendo que el agua escurriera y arrastrara el exceso de colorante. La muestra se secó con el calor del mechero, pasándola rápidamente a través de la llama, para dejarla lista para la observación microscópica.
+                                </p>
+                                <figure class="my-4 text-center">
+    <video src="30-2 video.mov" 
+           alt="Video 30: Cuarto y último lavado con agua destilada para retirar el exceso de Safranina."
+           class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200 unpausable-video" 
+           style="width: 10cm; height: 10cm; object-fit: contain;" autoplay muted loop>
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Video 30: Cuarto y último lavado con agua destilada para retirar el exceso de Safranina.
+    </figcaption>
+</figure>
+                                                                </div>
+
+                            </div>
+                        </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Seleccionamos todos los elementos con la clase 'unpausable-video'
+        const videos = document.querySelectorAll('.unpausable-video');
+
+        videos.forEach(video => {
+            // Eliminamos el control por si el navegador lo reintroduce
+            video.removeAttribute('controls');
+            
+            // EL TRUCO PRINCIPAL: Forzamos la reproducción si se detecta un intento de pausa
+            video.addEventListener('pause', () => {
+                video.play();
+            });
+
+            // Forzamos la reproducción al inicio (necesario en algunos navegadores)
+            video.play().catch(error => {
+                console.log("Error de Autoplay:", error);
+            });
+        });
+    });
+</script>
+                    
+                    <!-- Sub-sección: RESULTADOS (MANTENIDO) -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-xl mt-8">
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Resultados</h4>
+                        
+                        <!-- TABLA DE RESULTADOS EN TARJETAS PARA MEJOR RESPONSIVIDAD -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            
+                            <!-- Tarjeta 1: Bacterias del Sarro Dental -->
+                            <!-- Border Top: Gram Positive (Dark Green) -->
+                            <div class="p-4 rounded-lg bg-micro-blanco border-t-4 border-micro-main shadow-md">
+                                <h5 class="font-bold text-lg text-micro-main mb-2 flex items-center">
+                                    <span class="objective-icon text-micro-main">🦷</span> Bacterias del Sarro Dental
+                                </h5>
+                                
+                                <p class="text-base text-micro-text">
+                                    La observación microscópica de la muestra de sarro dental reveló una abundante microbiota polimicrobiana, un hallazgo completamente esperado en la cavidad oral.
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    Se identificaron numerosos cocos Gram positivos, tiñéndose intensamente de color violeta. Estos cocos se distribuyeron de forma difusa en el campo, con una disposición predominante en cadenas cortas y agrupaciones irregulares. Esta morfología y agrupación es compatible con la presencia de Streptococcus u otros cocos Gram positivos comensales.
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    Además de las bacterias, se observó material amorfo y rojizo en el centro del campo, que podría corresponder a restos de células epiteliales o a un artefacto propio de la tinción.
+                                </p>
+
+                              <figure class="my-4 text-center">
+    <img src="1-2.jpg"
+        alt="Micrografía de la flora bacteriana del sarro dental teñida con Gram."
+        class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200"
+        style="width: 5cm; height: 10cm; object-fit: contain;">
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 1: Micrografía de la flora bacteriana del sarro dental teñida con Gram.
+    </figcaption>
+</figure>
+
+
+    </div>
+                            <!-- Tarjeta 2: Bacterias del Yogur (EXISTENTE) -->
+                            <!-- Border Top: Yogurt Color (Dark Green) -->
+                            <div class="p-4 rounded-lg bg-micro-blanco border-t-4 border-micro-main shadow-md md:col-span-2 lg:col-span-1">
+                                <h5 class="font-bold text-lg text-micro-main mb-2 flex items-center">
+                                    <span class="objective-icon text-micro-main">🥛</span> Bacterias del Yogur
+                                </h5>
+                                
+                                <p class="text-base text-micro-text">
+                                    La observación al microscopio reveló una abundante presencia microbiana. Se distinguieron estructuras teñidas predominantemente de color rojo/rosado, un hallazgo que es característico de los microorganismos en la tinción utilizada. En cuanto a la morfología, la mayoría de los organismos eran bacilos cortos o cocobacilos. Estos se encontraban distribuidos de forma difusa por el campo, aunque también se observaron en cúmulos compactos en algunas áreas.
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    El fondo de la muestra presentaba material amorfo, compatible con la matriz láctea residual (los componentes no celulares del yogur).
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    En general, el hallazgo es compatible con la presencia de microorganismos fermentativos esperados en el yogur (típicamente Lactobacillus y Streptococcus). La apariencia podría estar ligeramente afectada, ya sea por la técnica de preparación de la muestra o por el estado celular de las bacterias.
+                                </p>
+
+                                <figure class="my-4 text-center">
+    <img src="2-2.jpg"
+         alt="Micrografía de la flora bacteriana del yogur teñida con Gram (mayormente bacilos)."
+         class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200"
+         style="width: 5cm; height: 10cm; object-fit: contain;">
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 2: Micrografía de la flora bacteriana del yogur teñida con Gram (mayormente bacilos).
+    </figcaption>
+</figure>
+                            </div>
+
+                            <!-- Tarjeta 2: Bacterias de la Uva Fermentada (EXISTENTE) -->
+                            <!-- Border Top: Yogurt Color (Dark Green) -->
+                            <div class="p-4 rounded-lg bg-micro-blanco border-t-4 border-micro-main shadow-md md:col-span-2 lg:col-span-1">
+                                <h5 class="font-bold text-lg text-micro-main mb-2 flex items-center">
+                                    <span class="objective-icon text-micro-main">🍇</span> Bacterias de la Uva Fermentada
+
+                                </h5>
+                                
+                                <p class="text-base text-micro-text">
+                                    El campo visual microscópico, obtenido mediante una tinción de Gram a partir de una muestra de uva en proceso de fermentación, revela una flora polimicrobiana densa y heterogénea.
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    Se observa un claro predominio de estructuras teñidas de color rojizo a rosado, una coloración característica de los microorganismos Gram negativos o de otros organismos, como las levaduras, que no retienen el colorante primario (cristal violeta) y toman la safranina. La morfología dominante en este color es bacilar (en forma de barra).
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    No obstante, la imagen también presenta estructuras teñidas de un color violeta muy oscuro, casi negro, que se manifiestan como puntos más pequeños y agrupaciones. Esta coloración oscura indica microorganismos Gram positivos, ya sean cocos (formas redondeadas) o bacilos que lograron retener el cristal violeta. En un contexto de uva fermentada, estos podrían ser bacterias lácticas (Lactobacillus o Pediococcus), aunque su población es minoritaria.
+                                </p>
+                                <p class="text-base text-micro-text">
+                                    Intercalados con estos dos tipos de bacterias, se distinguen estructuras de naturaleza ovoide, lo que sugiere la presencia de levaduras. En conjunto, la imagen es altamente representativa de un ecosistema en fermentación activa, donde coexisten poblaciones de bacterias Gram negativas, levaduras y una población menor de bacterias Gram positivas.
+                                </p>
+                                <figure class="my-4 text-center">
+    <img src="3-2.jpg"
+         alt="Micrografía de bacterias y levaduras de uva fermentada teñidas con Gram."
+         class="w-full max-w-xs mx-auto rounded-lg shadow-lg border border-gray-200"
+         style="width: 5cm; height: 10cm; object-fit: contain;">
+    <figcaption class="mt-2 text-xs text-gray-500 italic">
+        Figura 3: Micrografía de bacterias y levaduras de uva fermentada teñidas con Gram.
+    </figcaption>
+</figure>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                    <!-- NUEVA SECCIÓN: ANÁLISIS Y DISCUSIÓN (MANTENIDA) -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-xl mt-8">
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Análisis y Discusión</h4>
+                        
+                        <div class="space-y-6">
+                            
+                            <!-- Sarro Dental - Border micro main:  (Dark Green) -->
+                            <div class="p-4 rounded-lg text-micro-main border-t-4 border-micro-main shadow-md md:col-span-2 lg:col-span-1"">
+                                <!-- Title Color: micro main (Dark Green) -->
+                                <h5 class="font-semibold text-lg text-micro-main flex items-center mb-2">
+                                    <span class="mr-2 text-2xl">🦷</span> Bacterias del Sarro Dental
+                                </h5>
+                                <p class="text-micro-text leading-relaxed">
+                                    La observación en la muestra de sarro dental permitió confirmar la presencia de una microbiota oral diversa y esperada. El hallazgo de cocos teñidos intensamente de violeta y dispuestos en cadenas cortas o agrupaciones irregulares se interpreta como la identificación de bacterias Gram positivas. Esta morfología y tinción son altamente compatibles con especies como los Streptococcus, que son flora comensal principal de la cavidad oral y presentan una pared celular gruesa de peptidoglicano capaz de retener el complejo Cristal Violeta-Lugol, resistiendo la decoloración por Alcohol-Acetona. La presencia del material amorfo rojizo podría atribuirse a restos de células epiteliales teñidas con safranina, o a una matriz extracelular propia del biofilm dental.
+                                </p>
+                            </div>
+                            
+                            <!-- Yogur - Border micro main: Gram Negative (Dark Green) -->
+                            <div class="p-4 rounded-lg text-micro-main border-t-4 border-micro-main shadow-md md:col-span-2 lg:col-span-1">
+                                <!-- Title Color: Gram Negative (Dark Green) -->
+                                <h5 class="font-semibold text-lg text-micro-main-inst flex items-center mb-2">
+                                    <span class="mr-2 text-2xl">🥛</span> Bacterias del Yogur
+                                </h5>
+                                <p class="text-micro-text leading-relaxed">
+                                    Los resultados del yogur mostraron una flora microbiana dominada por bacilos cortos o cocobacilos de color rojo/rosado. La interpretación primaria de esta coloración indica la presencia de microorganismos Gram negativos. Sin embargo, es fundamental considerar el contexto de la muestra: el yogur es fermentado típicamente por bacterias lácticas Gram positivas (como Lactobacillus y Streptococcus). La apariencia de Gram negativo en organismos que deberían ser Gram positivos (bacilos/cocobacilos rosados) se interpreta como un resultado atípico o una artefacto técnico, conocido como <strong class="font-medium">Gram variable o Gram negativo por sobre-decoloración</strong>. Esto ocurre cuando las bacterias en etapas avanzadas de crecimiento o autolisis (común en muestras comerciales o viejas) pierden la integridad de su pared celular Gram positiva y liberan el complejo violeta, tomando la safranina. No obstante, la morfología de bacilos y cocobacilos sí es consistente con las bacterias lácticas esperadas.
+                                </p>
+                            </div>
+
+                            <!-- Uva Fermentada - Border micro main: Gram Negative (Dark Green) -->
+                            <div class="p-4 rounded-lg bg-micro-blanco border-t-4 border-micro-main shadow-md md:col-span-2 lg:col-span-1">
+                                <!-- Title Color: Gram Negative (Dark Green) -->
+                                <h5 class="font-semibold text-lg text-micro-main flex items-center mb-2">
+                                    <span class="mr-2 text-2xl">🍇</span> Bacterias de la Uva Fermentada
+                                </h5>
+                                <p class="text-micro-text leading-relaxed">
+                                    La muestra de uva en fermentación proporcionó el resultado más polimicrobiano. Se interpretó la clara dominancia de estructuras rojizas/rosadas con morfología bacilar como la presencia de bacterias Gram negativas. La coexistencia de formas ovoides también teñidas de rosado se interpretó como la presencia de <strong class="font-medium">levaduras (hongos unicelulares)</strong>, que por la estructura de su pared celular a menudo reaccionan de forma Gram negativa o variable. Finalmente, la observación de estructuras violeta muy oscuro (Gram positivas) con morfologías de cocos o bacilos pequeños se interpreta como la minoritaria presencia de bacterias lácticas Gram positivas (Lactobacillus/Pediococcus) que participan activamente en la fermentación maloláctica. Este ecosistema complejo es característico de los procesos de fermentación naturales o poco controlados, donde coexisten múltiples grupos microbianos.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN DE CONCLUSIONES (RELLENADA Y MANTENIDA) -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-300 shadow-xl mt-8">
+                        <!-- Título unificado: Dark Green -->
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Conclusiones</h4>
+                        
+                        <ul class="list-none space-y-3 text-micro-text">
+                            <li class="flex items-start">
+                                <!-- Icono: Dark Green Main -->
+                                <span class="mr-2 text-lg text-micro-main">✅</span> La Tinción de Gram se aplicó con éxito, logrando la diferenciación efectiva entre bacterias Gram positivas (violeta) y Gram negativas (rosado/rojo), cumpliendo con el objetivo principal del laboratorio.
+                            </li>
+                            <li class="flex items-start">
+                                <!-- Icono: Dark Green Main -->
+                                <span class="mr-2 text-lg text-micro-main">✅</span> Se pudo correlacionar la morfología observada (cocos, bacilos y formas ovoides) con su reacción a la tinción, lo que permitió la identificación presuntiva de microorganismos clave en cada muestra.
+                            </li>
+                            <li class="flex items-start">
+                                <!-- Icono: Dark Green Main -->
+                                <span class="mr-2 text-lg text-micro-main">✅</span> Los resultados del yogur demostraron que la tinción puede ser Gram variable en culturas viejas o con alta actividad metabólica, indicando que la integridad de la pared celular no es absoluta, y se debe ser cauto al interpretar la coloración.
+                            </li>
+                            <li class="flex items-start">
+                                <!-- Icono: Dark Green Main -->
+                                <span class="mr-2 text-lg text-micro-main">✅</span> Se confirmó que el sarro dental y la uva fermentada son ecosistemas biológicos complejos, presentando una rica flora polimicrobiana que incluye la coexistencia de bacterias Gram positivas, Gram negativas y levaduras.
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500">
+            Documento de Laboratorio creado para Fundamentos de Microbiología.
+        </footer>
+
+    </div>
+</body>
+</html>-->
+            
+        </div>
+
+        <!-- CONTENEDOR VACÍO PARA LABORATORIO 3 -->
+        <div id="lab-content-3" class="hidden">
+             <!-- PEGA AQUÍ TU CÓDIGO DEL LABORATORIO 3 <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Nº3 - Preparación de EMB Agar y Mannitol Salt Agar</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Usando la fuente Inter para un look limpio y moderno */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Gris muy claro, casi blanco azulado (Nuevo color de fondo) */
+        }
+        /* Estilo para los iconos de objetivo y materiales */
+        .objective-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            min-width: 1.2rem; /* Asegura el espaciado para todos los íconos */
+        }
+        /* Estilos para las visualizaciones de las figuras */
+        .figure-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151; /* gray-700 */
+        }
+        /* Estilos específicos para la diferenciación en el análisis (Colores solicitados por el usuario) */
+        .gram-positive {
+            border-left: 4px solid #D4AC0D; /* ORO PROFUNDO (Scientific Gram+) */
+            background-color: #fafafa;
+        }
+        .gram-negative {
+            border-left: 4px solid #008080; /* TEAL PROFUNDO (Scientific Gram-) */
+            background-color: #fafafa;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'micro-main': '#1E4620',         /* Verde Oscuro (Primary/Titles) */
+                        'micro-accent': '#38761D',       /* Verde más claro (Accent/Secondary) */
+                        'micro-text': '#333333',         /* Gris Oscuro para texto */
+                        'micro-background': '#F0FFF0',   /* Fondo suave verde muy pálido */
+                        'gram-pos-inst': '#D4AC0D',      /* Oro Profundo (Scientific Gram+) */
+                        'gram-neg-inst': '#008080',      /* Teal Profundo (Scientific Gram-) */
+                        'yogurt-color': '#D4AC0D',       /* Oro Profundo para Yogurt */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 sm:p-8 lg:p-12">
+
+    <!-- Barra de Navegación ELIMINADA -->
+    
+    <!-- Contenedor Principal Centrado -->
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-6 sm:p-10 lg:p-12 border border-gray-100">
+
+        <!-- TÍTULO PRINCIPAL DEL LABORATORIO -->
+        <header class="text-center mb-10 pb-4 border-b-4 border-micro-main/50">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-micro-main tracking-tight">
+                Laboratorio Nº3 de Fundamentos de Microbiología
+            </h1>
+        </header>
+
+        <!-- TÍTULO DE LA PRÁCTICA -->
+        <h2 class="text-3xl sm:text-4xl font-bold text-black-500 text-center mb-10">
+            Preparación de Medios de Cultivo Sólidos 
+        </h2>
+
+        <!-- SECCIÓN DE LA ACTIVIDAD -->
+        <section class="mb-10">
+            <div id="cultivo-aislamiento" class="bg-micro-background p-6 rounded-2xl shadow-xl border border-micro-accent/30">
+                <h3 class="text-2xl sm:text-3xl font-bold text-micro-main mb-6 border-b-4 border-micro-main/50 pb-3">
+                    EMB Agar (Levine) y Mannitol Salt Agar (MSA)
+                </h3>
+
+                <!-- Contenedor para el contenido -->
+                <div class="space-y-8 text-gray-700">
+                    
+                    <!-- Sub-sección: Introducción -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Introducción</h4>
+                        <p class="text-gray-700">
+                            El presente laboratorio se enmarca dentro de las prácticas fundamentales de la microbiología, siendo la preparación de medios de cultivo la base esencial para cualquier estudio o investigación microbiológica. Los microorganismos requieren de condiciones nutricionales y ambientales específicas para su proliferación en el laboratorio, y es a través de estos medios artificiales que se puede lograr su aislamiento, identificación y caracterización. El principal motivo para llevar a cabo esta práctica es la necesidad de adiestrar al alumno en las técnicas asépticas y de formulación precisas requeridas, ya que la calidad y esterilidad del medio influyen directamente en la validez de los resultados experimentales futuros. El objetivo central de este trabajo es familiarizarse con la metodología de preparación de dos medios de cultivo diferenciales y selectivos: el Mannitol Salt Agar (MSA) y el EMB Agar (Levine). El fundamento de la preparación radica en asegurar la correcta dosificación de los polvos deshidratados y la posterior esterilización por calor (ebullición) y control de la asepsia durante el vertido para obtener un sustrato biológicamente apto. Se investigó que el agar EMB (agar azul de metileno eosina) tiene diversos usos importantes: se recomienda para el aislamiento y la diferenciación de bacterias entéricas gramnegativas de muestras clínicas y no clínicas. Es particularmente útil para diferenciar microorganismos del grupo colon-tifoidea-disentería, ayudando a distinguir visualmente entre Escherichia coli, otros bacilos gramnegativos entéricos no patógenos fermentadores de lactosa, y los géneros Salmonella y Shigella. También se utiliza para comprobar la calidad del agua. Por su parte, el agar sal manitol (MSA) se utiliza primariamente para el aislamiento selectivo y la diferenciación de Staphylococcus aureus a partir de muestras clínicas. También es útil para la enumeración de estafilococos en alimentos y productos lácteos, y se incluye en manuales para pruebas de cosméticos y en el examen bacteriológico de agua de piscinas y potable. Por lo tanto, la correcta preparación de estos medios, que sirven como herramientas cruciales en el diagnóstico, control de calidad y análisis ambiental.
+                        </p>
+                    </div>
+
+                    <!-- Sub-sección: Objetivos -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Objetivos</h4>
+                        <ul class="space-y-3 text-gray-700 list-none mt-3">
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">🎯</span>
+                                <p>Adiestrar al alumno en la preparación de diferentes medios de cultivo.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Sub-sección: Materiales -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Materiales</h4>
+                        <ul class="space-y-3 text-gray-700 list-none mt-3">
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">💧</span>
+                                <p>Agua</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🍚</span>
+                                <p>Mortero y Pistilo</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">⚖️</span>
+                                <p>Balanza Analítica</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🥄</span>
+                                <p>Espátula</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🥃</span>
+                                <p>Matraz Erlenmeyer de 250 mL</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">📜</span>
+                                <p>Hoja de Papel</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🔥</span>
+                                <p>Mechero de Alcohol</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🔥</span>
+                                <p>Agitador Magnético con Placa Calefactora</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">💥</span>
+                                <p>Encendedor</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🧫</span>
+                                <p>Placas de Petri</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🧤</span>
+                                <p>Guantes</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🧪</span>
+                                <p>EMB Agar</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-main">🧪</span>
+                                <p>Mannitol Salt Agar</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Sub-sección: Metodología -->
+                   <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+    
+    <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Metodología</h4>
+    
+    <div class="mt-3 space-y-6 text-gray-700">
+        
+        <h5 class="text-lg font-semibold text-micro-main mt-0 mb-4 border-b border-micro-main pb-2">Preparación del Mannitol Salt Agar (MSA)</h5>
+
+        <div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>El polvo del medio de cultivo Mannitol Salt Agar (MSA) se trituró con el mortero y el pistilo para asegurar su homogeneidad antes de la disolución.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <!-- Se eliminó la clase 'h-24' para permitir que el contenido (la imagen) tenga 7cm de altura -->
+        <div class="flex items-center justify-center w-full p-2">
+            <!-- Se aplica el tamaño de 7cm x 7cm con estilo CSS -->
+            <img 
+                src="1-3.jpg" 
+                alt="MSA Trituración" 
+                style="width: 7cm; height: 7cm; object-fit: contain;" 
+                class="rounded-lg shadow-md"
+                onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"
+            >
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 1: Trituración del polvo MSA para garantizar su uniformidad.</span>
+    </div>
+</div>
+<!-- Bloque 1: MSA Pesaje --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se colocó una hoja de papel sobre el plato de la balanza analítica. Posteriormente, se presionó el botón de puesta a cero en la balanza. Se comenzó a agregar el MSA sobre el papel hasta que se alcanzó aproximadamente el peso deseado de 22.20 g.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="2-3.jpg" alt="MSA Pesaje" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 2: Pesaje de 22.18 g del medio de cultivo MSA utilizando la balanza analítica.</span>
+    </div>
+</div>
+
+<!-- Bloque 2: MSA Adición de agua --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se llenó un matraz Erlenmeyer con 200 mL de agua.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="3-3.jpg" alt="MSA Adición de agua" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 3: Adición precisa de 200 mL de agua al matraz Erlenmeyer.</span>
+    </div>
+</div>
+
+<!-- Bloque 3: MSA Disolución --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se añadió el polvo de MSA pesado al matraz que contenía el agua. Posteriormente, se introdujo un agitador magnético en el matraz.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="4-3.jpg" alt="MSA Disolución" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 4: Adición del polvo de MSA y la barra de agitación magnética al matraz.</span>
+    </div>
+</div>
+
+<!-- Bloque 4: MSA Ebullición --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>El matraz se colocó en la Placa Calefactora con Agitador Magnético. Se dejó el matraz sobre la placa hasta que comenzó a burbujear (hervir), asegurando la completa disolución de los componentes del agar.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="5-3.jpg" alt="MSA Ebullición" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 5: Calentamiento del medio de cultivo hasta ebullición para disolver completamente el agar.</span>
+    </div>
+</div>
+
+<!-- Bloque 5: MSA Enfriamiento --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Posteriormente, se retiró el matraz del agitador y se esperó un tiempo para que el medio se enfriara ligeramente antes de su vertido en las placas de Petri.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="6-3.jpg" alt="MSA Enfriamiento" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 6: Matraz con medio MSA caliente enfriándose sobre la mesa de trabajo antes del vertido.</span>
+    </div>
+</div>
+
+<!-- Bloque 6: Vertido con Video e Imagen (MSA) --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se encendió el mechero de alcohol para crear una zona estéril cerca del área de trabajo. Se procedió a verter el Mannitol Salt Agar en cinco placas de Petri. Inmediatamente después del vertido, las tapas se dejaron entreabiertas ligeramente para permitir que el exceso de vapor se liberara y así evitar la condensación, como se ilustra en los recursos visuales.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner space-y-4">
+        <!-- BLOQUE 1: VIDEO (Proceso de Vertido) --><div class="w-full">
+            <div class="flex items-center justify-center w-full mb-2 p-2">
+                <video src="1-3 video.mov" alt="Vertido del MSA en placas de Petri dentro de la zona estéril creada por el mechero." style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+            <span class="mt-2 text-xs font-medium text-gray-600">Video 1: Proceso de vertido del MSA en placas de Petri.</span>
+        </div>
+
+        <hr class="w-2/3 border-t border-gray-300">
+
+        <!-- BLOQUE 2: IMAGEN (Detalle de la Tapa Entreabierta) --><div class="w-full">
+            <div class="flex items-center justify-center w-full mb-2 p-2">
+                <img src="7-3.jpg" alt="Tapa Entreabierta para Ventilación" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';" />
+            </div>
+            <span class="mt-2 text-xs font-medium text-gray-600">Figura 7: Detalle de la placa de Petri con la tapa entreabierta para la liberación de vapor.</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bloque 7: Eliminación de Condensación (MSA) --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <!-- Corregido md:w-9/3 a md:w-2/3 --><div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Para eliminar el empañamiento (condensación) de las tapas, estas se pasaron rápidamente por la llama del mechero de alcohol, como se muestra en el video a continuación. Finalmente, las placas de Petri se taparon completamente y se almacenaron hasta su uso.</p>
+        </div>
+    </div>
+    <!-- Corregido md:w-8/3 a md:w-1/3 --><div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <video src="2-3 video.mov" alt="MSA Eliminación de Condensación" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Video 2: Eliminación de la condensación de la tapa de la placa de Petri usando la llama del mechero.</span>
+    </div>
+</div>
+
+<h5 class="text-lg font-semibold text-micro-main mt-6 mb-4 border-b border-micro-main pb-2 pt-4">Preparación del EMB Agar (Levine)</h5>
+
+<!-- Bloque 8: EMB Pesaje --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se colocó una hoja de papel sobre el plato de la balanza analítica. Posteriormente, se presionó el botón de puesta a cero en la balanza. Se comenzó a agregar el EMB Agar sobre el papel hasta que se alcanzó aproximadamente el peso deseado de 7.50 g.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="8-3.jpg" alt="EMB Pesaje" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 8: Pesaje de 7.51 g del medio de cultivo EMB Agar.</span>
+    </div>
+</div>
+
+<!-- Bloque 9: EMB Adición de agua --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se llenó un matraz Erlenmeyer con 200 mL de agua.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="9-3.jpg" alt="EMB Adición de agua" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 9: Adición de 200 mL de agua al matraz para la disolución del EMB Agar.</span>
+    </div>
+</div>
+
+<!-- Bloque 10: EMB Disolución --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se añadió el polvo de EMB Agar pesado al matraz que contenía el agua. Posteriormente, se introdujo un agitador magnético en el matraz.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <img src="10-3.jpg" alt="EMB Disolución" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';"/>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Figura 10: Adición del polvo de EMB Agar y la barra de agitación magnética al matraz.</span>
+    </div>
+</div>
+
+<!-- Bloque 11: EMB Ebullición --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <!-- Corregido md:w-9/3 a md:w-2/3 --><div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>El matraz se colocó en la Placa Calefactora con Agitador Magnético. Se dejó el matraz sobre la placa hasta que comenzó a burbujear (hervir), asegurando la completa disolución de los componentes del agar.</p>
+        </div>
+    </div>
+    <!-- Corregido md:w-8/3 a md:w-1/3 --><div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <video src="3-3 video.mov" alt="EMB Ebullición" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Video 3: Calentamiento del medio de cultivo EMB Agar hasta ebullición para disolver completamente el agar.</span>
+    </div>
+</div>
+
+<!-- Bloque 12: EMB Enfriamiento --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <!-- Corregido md:w-9/3 a md:w-2/3 --><div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Posteriormente, se retiró el matraz del agitador y se extrajo el agitador magnético del matraz. Se esperó un tiempo para que el medio se enfriara ligeramente antes de verterlo en las placas de Petri.</p>
+        </div>
+    </div>
+    <!-- Corregido md:w-8/3 a md:w-1/3 --><div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <video src="4-3 video.mov" alt="EMB Enfriamiento" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Video 4: Matraz con medio EMB Agar caliente enfriándose sobre la mesa de trabajo antes del vertido.</span>
+    </div>
+</div>
+
+<div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Se encendió el mechero de alcohol para crear una zona estéril cerca del área de trabajo. Se procedió a verter el EMB Agar en cinco placas de Petri. Inmediatamente después del vertido, las tapas se dejaron entreabiertas ligeramente para permitir que el exceso de vapor se liberara y así evitar la condensación.</p>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner space-y-4">
+        <div class="w-full">
+            <div class="flex items-center justify-center w-full mb-2 p-2">
+                <img src="11-3.jpg" alt="Vertido del EMB Agar en placas de Petri dentro de la zona estéril creada por el mechero." style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';" />
+            </div>
+            <span class="mt-2 text-xs font-medium text-gray-600">Figura 11: Proceso de vertido del EMB Agar en placas de Petri.</span>
+        </div>
+
+        <hr class="w-2/3 border-t border-gray-300">
+
+        <div class="w-full">
+            <div class="flex items-center justify-center w-full mb-2 p-2">
+                <img src="12-3.jpg" alt="Tapa Entreabierta para Ventilación" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" onerror="this.onerror=null; this.src='https://placehold.co/264x264/D1D5DB/1F2937?text=7cm+x+7cm';" />
+            </div>
+            <span class="mt-2 text-xs font-medium text-gray-600">Figura 12: Detalle de la placa de Petri con la tapa entreabierta para la liberación de vapor.</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bloque 14: EMB Eliminación de Condensación --><div class="flex flex-col md:flex-row gap-6 border-b border-gray-100 pb-4">
+    <!-- Corregido md:w-9/3 a md:w-2/3 --><div class="md:w-2/3">
+        <div class="space-y-2">
+            <p>Para eliminar el empañamiento (condensación) de las tapas, estas se pasaron rápidamente por la llama del mechero de alcohol. Finalmente, las placas de Petri se taparon completamente y se almacenaron hasta su uso.</p>
+        </div>
+    </div>
+    <!-- Corregido md:w-8/3 a md:w-1/3 --><div class="md:w-1/3 p-4 bg-gray-100 border border-gray-300 rounded-xl flex flex-col items-center justify-center text-center text-sm italic text-gray-500 shadow-inner">
+        <div class="flex items-center justify-center w-full p-2">
+            <video src="5-3 video.mov" alt="EMB Eliminación de Condensación" style="width: 7cm; height: 7cm; object-fit: contain;" class="rounded-lg shadow-md" autoplay muted loop>
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <span class="mt-2 text-xs font-medium text-gray-600">Video 5: Eliminación de la condensación de la tapa de la placa de Petri usando la llama del mechero.</span>
+    </div>
+</div>
+    </div>
+</div>
+                    
+                    <!-- Sub-sección: RESULTADOS -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-xl mt-8">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Resultados</h4>
+                        
+                        <p class="text-gray-700 mb-4">
+                            La preparación de los medios de cultivo Mannitol Salt Agar (MSA) y EMB Agar (Levine) se completó satisfactoriamente, culminando con la obtención de diez placas de Petri listas para su uso, cinco de cada medio. El proceso metodológico fue rigurosamente documentado para asegurar la objetividad y trazabilidad de los resultados, destacando las precisiones en el pesaje.
+                        </p>
+
+                        <h5 class="text-lg font-semibold text-micro-main mt-4 mb-2">Mannitol Salt Agar (MSA)</h5>
+                        <p class="text-gray-700 mb-4">
+                            Se realizó el pesaje del polvo de MSA. El peso ideal proporcionado fue de 22.20 g. El peso obtenido experimentalmente fue de 22.18 g. Esta cantidad, previamente triturada para garantizar una homogeneidad óptima, fue disuelta en 200 mL de agua. La solución se sometió a calentamiento hasta el punto de ebullición, un paso crítico para la completa disolución del agar y la esterilización inicial del medio. Posteriormente, el medio fue vertido en cinco placas de Petri, un proceso ejecutado cerca de la llama de un mechero de alcohol para establecer una zona de trabajo aséptica y mitigar la contaminación aerotransportada. Tras el vertido, se controló la condensación dejando las tapas ligeramente entreabiertas y eliminando el vapor residual mediante un rápido flameado de las tapas. El medio solidificó con la coloración naranja característica del MSA, confirmando la correcta preparación.
+                        </p>
+
+                        <h5 class="text-lg font-semibold text-micro-main mt-4 mb-2">EMB Agar (Levine)</h5>
+                        <p class="text-gray-700 mb-4">
+                            El pesaje del medio de cultivo EMB Agar se llevó a cabo con una precisión similar. El peso ideal proporcionado fue de 7.50 g. El peso obtenido experimentalmente fue de 7.51 g. Esta cantidad fue disuelta en 200 mL de agua. Al igual que con el MSA, la solución fue llevada a ebullición para disolver completamente el agar y sus componentes selectivos. Una vez enfriado ligeramente, el medio se vertió en cinco placas de Petri bajo las mismas condiciones de asepsia. Las técnicas de control de condensación (tapas entreabiertas y flameado) se aplicaron de igual forma. El resultado fue la obtención de placas de agar de color púrpura oscuro, que solidificaron correctamente y se almacenaron en condiciones que previenen la caída de gotas de condensación sobre la superficie del agar, garantizando la integridad del medio para futuras inoculaciones.
+                        </p>
+                        <p class="text-gray-700">
+                            Ambos medios solidificaron adecuadamente y presentaron la consistencia y coloración esperadas (naranja para el MSA y púrpura oscuro para el EMB Agar). La mínima diferencia entre el peso ideal y el peso obtenido en ambos medios sugiere una alta precisión en la técnica de pesaje.
+                        </p>
+                    </div>
+                    
+                    <!-- SECCIÓN: ANÁLISIS Y DISCUSIÓN -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-xl mt-8">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Análisis y Discusión</h4>
+                        
+                        <p class="text-gray-700">
+                            El objetivo principal del laboratorio, adiestrar al alumno en la preparación de diferentes medios de cultivo, se cumplió con éxito. La interpretación de los resultados obtenidos en la fase experimental confirma la adquisición de la destreza técnica necesaria y la calidad adecuada de los medios preparados para su uso posterior en microbiología. Uno de los resultados más importantes a interpretar es la precisión en la dosificación de los medios de cultivo en polvo, que es fundamental para garantizar las concentraciones adecuadas de nutrientes e inhibidores. Para el Mannitol Salt Agar (MSA), el peso obtenido fue de 22.18 g, mostrando una desviación mínima de solo 0.02 g respecto al peso ideal de 22.20 g. Se interpreta que la concentración final de los componentes es la teóricamente correcta. En cuanto al EMB Agar (Levine), el peso obtenido fue de 7.51 g, mostrando una desviación mínima de solo 0.01 g respecto al peso ideal de 7.50 g. Esta ligera variación es insignificante para el rendimiento funcional del medio, por lo tanto, se interpreta que la concentración de Eosina Y, Azul de Metileno y agar es la apropiada.
+                        </p>
+                        
+                        <p class="text-gray-700 mt-4">
+                            Los resultados macroscópicos de la solidificación y coloración de los medios son clave para su validación funcional. El hecho de que ambos medios solidificaran correctamente indica que la concentración de agar fue la adecuada y que la etapa de ebullición fue suficiente para lograr la disolución completa de los gránulos de agar, garantizando la formación de la matriz sólida necesaria. La coloración anaranjada del MSA solidificado es la esperada, confirmando que el medio está en su forma base y que los indicadores de pH están en un pH neutro, lo que es un resultado directo de la formulación original. De igual forma, la coloración púrpura oscuro del EMB Agar solidificado es la esperada, lo que demuestra que los colorantes se distribuyeron uniformemente y que el medio de cultivo está listo para ejercer su función selectiva y diferencial. Finalmente, la ausencia de burbujas excesivas o de condensación significativa, controlada con las prácticas asépticas (trabajo cerca de la llama y flameado de tapas), sugiere que se minimizó la introducción de contaminantes. En conclusión, la ejecución del protocolo resultó en la obtención de medios de cultivo de alta calidad, con concentraciones precisas y apariencia física correcta, lo que avala su uso en posteriores siembras para la selección y diferenciación bacteriana.
+                        </p>
+                    </div>
+
+                    <!-- SECCIÓN: CONCLUSIONES -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-xl mt-8">
+                        <h4 class="text-xl font-bold text-micro-main border-b-4 border-micro-main/50 pb-2 mb-4">Conclusiones</h4>
+                        <ul class="space-y-3 text-gray-700 list-none mt-3">
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+                                <p>El propósito de capacitación en la preparación de diferentes medios de cultivo fue alcanzado exitosamente.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+                                <p>Se demostró la adquisición y dominio de las técnicas de pesaje, disolución, calentamiento y vertido aséptico de medios de cultivo.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+                                <p>La alta precisión en la dosificación, con una desviación máxima de 0.02 g respecto al peso ideal, garantiza la concentración teórica correcta de los componentes en ambos medios.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+                                <p>Se obtuvieron diez placas de Petri funcionales (cinco de MSA y cinco de EMB Agar) que solidificaron correctamente y presentaron la coloración esperada (naranja y púrpura oscuro, respectivamente), confirmando su calidad y la correcta disolución del agar.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="objective-icon text-micro-accent">✅</span>
+                                <p>Los medios de cultivo preparados son aptos y válidos para ser utilizados en futuras prácticas de identificación diferencial y selectiva de microorganismos.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+            Documento de Laboratorio creado para Fundamentos de Microbiología.
+        </footer>
+
+    </div>
+</body>
+</html>-->
+            
+        </div>
+
+    </main>
+</body>
+</html>
