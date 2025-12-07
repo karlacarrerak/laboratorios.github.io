@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice Principal | Documentación de Laboratorio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        /* Colores personalizados basados en LABORARIOS.html */
+        .micro-main { background-color: #1E4620; }
+        .text-micro-accent { color: #38761D; }
+        .border-micro-accent { border-color: #38761D; }
+    </style>
+    <script>
+        // Configuración de colores
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'micro-main': '#1E4620',
+                        'micro-accent': '#38761D',
+                    },
+                },
+            }
+        };
+    </script>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+
+    <div class="max-w-4xl w-full mx-auto p-6 lg:p-12">
+        
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold text-micro-main tracking-tight mb-2">
+                🔬 Portal de Documentos de Laboratorio
+            </h1>
+            <p class="text-xl text-gray-600 font-medium">
+                Fundamentos de Microbiología
+            </p>
+        </header>
+
+        <main class="bg-white shadow-xl rounded-2xl p-8 border-t-4 border-micro-accent">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                📚 Documentos Unificados
+            </h2>
+            
+            <p class="text-gray-700 mb-8 leading-relaxed">
+                Aquí encontrarás el índice de todos los reportes de laboratorio y documentos relevantes para el curso de Fundamentos de Microbiología. Haz clic en el enlace para acceder al documento.
+            </p>
+
+            <div class="space-y-4">
+                <a href="LABORATORIOS.html" class="block">
+                    <div class="flex items-center p-5 bg-gray-50 hover:bg-gray-100 rounded-lg transition duration-200 border border-gray-200">
+                        <span class="text-3xl mr-4 text-micro-accent">📋</span>
+                        <div>
+                            <p class="text-lg font-semibold text-gray-800">
+                                Reportes de Laboratorio Unificados
+                            </p>
+                            <p class="text-sm text-gray-500">
+                                Documento que contiene las prácticas de preparación de medios de cultivo (MSA, EMB) y más.
+                            </p>
+                        </div>
+                        <span class="ml-auto text-gray-400">→</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center p-5 bg-gray-50 rounded-lg border border-gray-200 opacity-60">
+                    <span class="text-3xl mr-4 text-gray-400">❓</span>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-600">
+                            Práctica 2: Siembra e Identificación de Colonias
+                        </p>
+                        <p class="text-sm text-gray-400">
+                            Documento disponible pronto.
+                        </p>
+                    </div>
+                    <span class="ml-auto text-gray-400">🔒</span>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="mt-10 pt-6 border-t border-gray-300 text-center text-sm text-gray-500">
+            Documentación generada para Fundamentos de Microbiología | 2025
+        </footer>
+        
+    </div>
+
+</body>
+</html>
